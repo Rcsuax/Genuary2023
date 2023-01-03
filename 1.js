@@ -1,20 +1,16 @@
-var a = 70;  //Set up the horizontal amplitute
-var b = 50;  //Set up the vertical amplitute
-var angle = 0;
-
 function setup() {
-	createCanvas(windowWidth, windowHeight);
-	// background(100);
+  createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-	background(100);
-	var x = a*cos(angle);
-  var y = b*sin(angle);
-	angle++;
+  background(100);
 
-	if(angle < 100) {
-		noFill()
-		circle(windowWidth/2 + x, windowHeight/2 + y, 20);	
-	}
+  fill(255, 204, 0)
+  noStroke()
+  circle(windowWidth/2, windowHeight/2,  100);
+
+  fill(0, 0, 255)
+  translate(width / 2, height / 2);
+  translate(p5.Vector.fromAngle(millis() / 1000, 40));
+  circle(0, 0, 20);
 }
